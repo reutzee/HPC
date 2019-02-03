@@ -1,0 +1,35 @@
+This Assignment simulates Adversarial/Co-operating agents, based on Minimax game-trees!
+the input is a graph - which represents Houses and Shelters (the vertices) and Roads (the edges)
+each house could have people in it, and the goal is to "evacuate" (to a shelter) as many people as possible before the given deadline.
+
+an example graph-input is included.
+
+Modes:
+1 . Adversarial (zero sum game): each agent aims to maximize its own score minus the opposing agent's score. an implementation of an "optimal" agent, using mini-max, with alpha-beta pruning.
+
+2 . A semi-cooperative game: each agent tries to maximize its own score. The agent disregards the other agent score, except that ties are broken cooperatively.
+
+3 . A fully cooperative both agents aim to maximize the sum of scores.
+
+the static evaluation function-
+if a CUTOFF is performed, the function result depends of how many each agent has scored SO FAR.
+
+
+
+
+How to run?
+run sim.py with the following flags:
+
+
+-g <graph_file_path> - default is 'graph.txt'
+-a <agent_file_path> - default s agents.txt - this is for task 1 - running a few "simple" agents
+-t <task number> - default is 1. - task 2 is Semi-cooperation and task3 is Full cooperation
+-c <cutoff_depth> - the depth for which to perform a CUTOFF
+-p <ping_pong>   -
+        if ping_pong mode is FALSE:
+            each run creates a SINGLE game tree, and the simulator just prints the steps.
+            it's faster than a normal game tree, but ends mid-game if a cutoff is performed.
+        if ping_pong mode is TRUE:
+            when the simulator runs, each agent (in turn) creates it's own game tree, to determine the next move.
+            this way the game eventually ends in a terminal state (even if some nodes are evaluated with a "guess")
+            the downside is the runtime. because we create a whole tree every turn.

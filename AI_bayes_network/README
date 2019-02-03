@@ -1,0 +1,58 @@
+The graph file is is given to the program as input (Example graph in graph.txt)
+when running the program the user can:
+    - Report floodings and Not-floodings
+    - Report Blockages and Free-edges
+    - Report Evacuees and Vertices empty from evacuees
+    - query a set of edges being free of blockage
+    - print reasoning required by the assignment specifications
+    - run the bonus - for a given source and desttination vertex, print the "best" path (with highest probability of being free of blockages)
+    - reset the reports.
+
+
+
+D-separation
+------------
+No Evidence -
+P( evacuees 1 |   ) = 0.13334032
+P( evacuees 2 |   ) = 0.173813388526
+P( evacuees 3 |   ) = 0.0335455846
+P( evacuees 4 |   ) = 0.0255687646
+P( flooding 1 |   ) = 0.2
+P( flooding 2 |   ) = 0.4
+P( flooding 3 |   ) = 0.0
+P( flooding 4 |   ) = 0.0
+P( blockage 1 |   ) = 0.33168
+P( blockage 2 |   ) = 0.0806
+P( blockage 3 |   ) = 0.001
+P( blockage 4 |   ) = 0.0606
+
+----------------------------------
+flooding in vertex 1
+----------------------------------
+P( evacuees 1 |  flooding 1 ) = 0.278704
+P( evacuees 2 |  flooding 1 ) = 0.31495688728
+P( evacuees 3 |  flooding 1 ) = 0.0335455846 (not affected)
+P( evacuees 4 |  flooding 1 ) = 0.0255687646 (not affected)
+P( flooding 1 |  flooding 1 ) = 1.0
+P( flooding 2 |  flooding 1 ) = 0.4  (not affected)
+P( flooding 3 |  flooding 1 ) = 0.0 (not affected)
+P( flooding 4 |  flooding 1 ) = 0.0 (not affected)
+P( blockage 1 |  flooding 1 ) = 0.696
+P( blockage 2 |  flooding 1 ) = 0.0806 (not affected)
+P( blockage 3 |  flooding 1 ) = 0.001
+P( blockage 4 |  flooding 1 ) = 0.0606
+----------------------------------
+blockage edge 1
+----------------------------------
+P( evacuees 1 |  blockage 1 ) = 0.4
+P( evacuees 2 |  blockage 1 ) = 0.463498213465
+P( evacuees 3 |  blockage 1 ) = 0.0638230998423
+P( evacuees 4 |  blockage 1 ) = 0.0482388639522
+P( flooding 1 |  blockage 1 ) = 0.419681620839
+P( flooding 2 |  blockage 1 ) = 0.781476121563
+P( flooding 3 |  blockage 1 ) = 0.0 (not affected)
+P( flooding 4 |  blockage 1 ) = 0.0 (not affected)
+P( blockage 1 |  blockage 1 ) = 1.0
+P( blockage 2 |  blockage 1 ) = 0.156513748191
+P( blockage 3 |  blockage 1 ) = 0.001 (not affected)
+P( blockage 4 |  blockage 1 ) = 0.117439942113

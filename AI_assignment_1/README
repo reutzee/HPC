@@ -1,0 +1,25 @@
+For this assignment,
+Our Heuristics function , for each NODE in the Search Tree (which represents a state), returns the number of People WE CANNOT SAVE.
+the calculation:
+for the state of the node, we calculate the shortest (in time) path to a POPULATED house, and from there, to the nearest
+Shelter.
+if we don't make it, we add the population of that house to our return value.
+
+this is done for each house. so eventually we get the number of people who would (unfortunately) die.
+
+this heuristic is making our problem a "minimization" problem. so choosing "where to go" in the world is based
+on a simple decision - where would we "kill" less people. our shortest path algorithm gives us a lower bound for that.
+
+calculating the number of people we WOULD SAVE is not that straight forward. because we cannot be sure
+how many people we would ABSOLUTELY save (differs for each agent). so we cannot guarantee any bound for that number.
+
+
+How to run the assignment  ?
+-----------------------------
+run sim.py with the following flags:
+-g <graph_file_path>   -   default is 'graph.txt'
+-a <agent_file_path>   -   default s agents.txt   - this is for task 1 - running a few "simple" agents
+-t <task number>       -   default is 1.          - task 2 is the smart agents, task 3 is the Vandal Bonus.
+-s <smart_strategy>    -   default is GREEDY      - options are GREEDY, A*, RTA
+-e <expand_limit>      -   default is 11          ** ONLY WORKS FOR RTA
+-f <f_parameter>       -   default is -100        - should be -1 or -100 or -10000. for the performance measurement
